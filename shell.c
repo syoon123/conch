@@ -16,7 +16,7 @@ void prompt() {
   char cwd[256];
   getcwd(cwd, sizeof(cwd));
   printf("%s", cwd);
-  printf(" $ ");
+  printf("$ ");
 }
 
 /*******************************************************
