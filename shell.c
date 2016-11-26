@@ -32,10 +32,33 @@ char ** split( char * line, char * delimiter ) {
   input = line;
   while ( input != NULL ) {
     ret[i] = strsep( &input, delimiter );
+    ret[i] = trimSpace(ret[i]);
     i++;
   }
   ret[i] = NULL;
   return ret;
+}
+
+/*******************************************************
+TRIMSPACE: removes extra white space from a given string
+Takes as input: input string
+Returns: output string
+*******************************************************/
+
+char * trimSpace(char *str){
+    char *end;
+ 
+    while(isspace(*str)){
+      str++;
+    }
+    if(*str == 0)
+        return str;
+    end = str + strlen(str) - 1;
+    while(end > str && isspace(*end)){
+      end--;
+    }
+    *(end+1) = 0;
+    return str;
 }
 
 /*******************************************************
@@ -53,7 +76,8 @@ int execute( char *args[] ) {
 
   if ( !(strcmp(args[0], "cd" )) ) {
     printf("Changing directory...\n");
-    if (args[1] == NULL){
+    printf("%s\n", args[1]);
+    if (args[1] == NULL || args[1] == "fts_open" ){
       chdir(getenv("HOME"));
     }
     else {
@@ -67,7 +91,7 @@ int execute( char *args[] ) {
   if (pid == -1) {
     char *error = strerror(errno);
     printf("Process Error: %s\n", error);
-    return 1;
+    return 0;
   }
     
   else if (pid == 0) {
