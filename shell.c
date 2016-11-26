@@ -16,7 +16,7 @@ void prompt() {
   char cwd[256];
   getcwd(cwd, sizeof(cwd));
   printf("%s", cwd);
-  printf("$ ");
+  printf(" $ ");
 }
 
 /*******************************************************
@@ -54,20 +54,21 @@ int execute( char *args[] ) {
   if ( !(strcmp(args[0], "cd" )) ) {
     printf("Changing directory...\n");
     chdir(args[1]);
+    return 0;
   }
 
   int pid = fork();
 
   if (pid == -1) {
     char *error = strerror(errno);
-    printf("ForkError: %s\n", error);
+    printf("Process Error: %s\n", error);
     return 1;
   }
     
   else if (pid == 0) {
     execvp(args[0], args);
     char * error = strerror(errno);
-    printf("Shell Error on %s: %s\n", args[0], error);
+    printf("Command Error for %s: %s\n", args[0], error);
     return 0;
   }
 
