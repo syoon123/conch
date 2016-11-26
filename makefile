@@ -1,7 +1,10 @@
 GCC = gcc -g
 
-all: shell.o
-	$(GCC) shell.o -o prog
+all: shell.o main.o
+	$(GCC) main.o shell.o -o prog
+
+main.o: main.c shell.c
+	$(GCC) -c main.c
 
 shell.o: shell.c shell.h
 	$(GCC) -c shell.c
