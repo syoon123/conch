@@ -53,7 +53,12 @@ int execute( char *args[] ) {
 
   if ( !(strcmp(args[0], "cd" )) ) {
     printf("Changing directory...\n");
-    chdir(args[1]);
+    if (args[1] == NULL){
+      chdir(getenv("HOME"));
+    }
+    else {
+      chdir(args[1]);
+    }
     return 0;
   }
 
