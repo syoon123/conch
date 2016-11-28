@@ -76,7 +76,6 @@ int execute( char *args[] ) {
 
   if ( !(strcmp(args[0], "cd" )) ) {
     printf("Changing directory...\n");
-    printf("%s\n", args[1]);
     if (args[1] == NULL || args[1] == "fts_open" ){
       chdir(getenv("HOME"));
     }
