@@ -211,10 +211,10 @@ Returns: none
 
 void ampRedir(char *line, int flag){  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CURRENTLY DOESN'T WORK~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   char *line2 = (char *)malloc(256);
-  if (flag = 0){
+  if (flag == 0){
     line2 = strsep(&line, "&>");
   }
-  if (flag = 1){
+  if (flag == 1){
     line2 = strsep(&line, ">&");
   }
   line2 = trimSpace(line2);
