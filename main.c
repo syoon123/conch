@@ -7,7 +7,8 @@
 #include "shell.h"
 
 int main() {
-  system("clear");
+  chdir(getenv("HOME"));
+  //system("clear");
   printf("Welcome to SeaShell!\n");
   printf("---------------------------\n\n");
   while (1) {
@@ -18,16 +19,8 @@ int main() {
       return 0;
     }
     *strchr(line, '\n') = 0;
+    parse(line);
 
-    char ** cmds = (char **) malloc (1000);
-    cmds = split(line, ";");
-    int i;
-    for (i=0; cmds[i] != NULL; i++) {
-      char ** command = (char *) malloc (256);
-      command = split(cmds[i], " ");
-
-      execute(command);
-    }
   }
   return 0;
 }
