@@ -11,6 +11,7 @@ int main() {
   //system("clear");
   printf("Welcome to SeaShell!\n");
   printf("---------------------------\n\n");
+  char * history;
   while (1) {
     prompt();
     char line[100];

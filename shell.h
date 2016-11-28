@@ -27,6 +27,5 @@ void ampRedir(char *line, int flag);
 
 void parsePipe(char *line);
 
-
 #endif
 

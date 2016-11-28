@@ -9,6 +9,8 @@
 
 #include "shell.h"
 
+char * lastCmd;
+
 /*******************************************************
 PROMPT: prints current dir and delimiter 
 Takes as input: none
@@ -79,19 +81,20 @@ void parse(char *line){
     checkRP(line2);
     checkRP(line);
   }
-  else
+  else {
     checkRP(line2);
+  }
 }
 
 /*******************************************************
 CHECKRP: Checks input string from terminal for redirects
-          or piping and passes to other functions to 
-          handle accordingly
+          piping, or other necessary markers and passes 
+          to other functions to handle accordingly
 Takes as input: input string
 Returns: none
 *******************************************************/
 
-void checkRP(char *line){ 
+void checkRP(char *line){
   if (strstr(line, ">>")){
     rightDoubleRedir(line);
   } 
@@ -113,6 +116,7 @@ void checkRP(char *line){
   else {
     execute(line);
   }
+  lastCmd = line;
 }
 
 /*******************************************************
@@ -271,8 +275,8 @@ Returns: 1 if successful, 0 otherwise
 *******************************************************/
 int execute(char *line){
 
-  char ** cmds = (char **) malloc (1000);
-  char ** args = (char **) malloc (256);
+  char **cmds = (char **)malloc(1000);
+  char **args = (char **)malloc(256);
 
   cmds = split(line, ";");
   int i;
@@ -286,12 +290,15 @@ int execute(char *line){
   }
 
   if ( !(strcmp(args[0], "cd" )) ) {
-    printf("Changing directory...\n");
     if (args[1] == NULL){
       chdir(getenv("HOME"));
     }
     else {
-      chdir(args[1]);
+      if (chdir(args[1]) == 0){
+        printf("Changing directory...\n");
+      }
+      else
+        printf("Failed to change directory!\n");
     }
     return 0;
   }
