@@ -23,7 +23,7 @@ void rightDoubleRedir(char *line);
 
 void twoRedir(char *line);
 
-void ampRedir(char *line, int flag);
+void ampRedir(char *line);
 
 void parsePipe(char *line);
 

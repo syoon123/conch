@@ -98,6 +98,12 @@ void checkRP(char *line){
   if (strstr(line, ">>")){
     rightDoubleRedir(line);
   } 
+  else if (strstr(line, "2>")){
+    twoRedir(line);
+  }
+  else if (strstr(line, "&>")){
+    ampRedir(line);
+  }
   else if (strchr(line, '>')){
     rightRedir(line);
   }
@@ -106,12 +112,6 @@ void checkRP(char *line){
   }
   else if (strchr(line, '|')){
     parsePipe(line);
-  }
-  else if (strstr(line, "&>")){
-    ampRedir(line, 0);
-  }
-  else if (strstr(line, ">&")){
-    ampRedir(line, 1);
   }
   else {
     execute(line);
@@ -206,29 +206,27 @@ void twoRedir(char *line){
 }
 
 /*******************************************************
-AMPREDIR: Splits the input on "&>" or ">&" and performes 
+AMPREDIR: Splits the input on "&>" and performes 
             the proper redirection before passing the
             command for execution
 Takes as input: input string
 Returns: none
 *******************************************************/
 
-void ampRedir(char *line, int flag){  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CURRENTLY DOESN'T WORK~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+void ampRedir(char *line){
   char *line2 = (char *)malloc(256);
-  if (flag == 0){
-    line2 = strsep(&line, "&>");
-  }
-  if (flag == 1){
-    line2 = strsep(&line, ">&");
-  }
+  line2 = strsep(&line, "&>");
   line2 = trimSpace(line2);
   line = line + 1;
   line = trimSpace(line); 
   int f1 = open(line, O_WRONLY | O_TRUNC | O_CREAT, 0644);
-  int f2 = dup( STDERR_FILENO );
+  int ferr = dup(STDERR_FILENO);
+  int fout = dup(STDOUT_FILENO);
   dup2(f1, STDERR_FILENO);
+  dup2(f1, STDOUT_FILENO);
   execute(line2); 
-  dup2(f2, STDERR_FILENO);
+  dup2(ferr, STDERR_FILENO);
+  dup2(fout, STDOUT_FILENO);
   close(f1);
 }
 
