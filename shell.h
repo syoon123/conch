@@ -17,5 +17,7 @@ void twoRedir(char *line);
 
 void ampRedir(char *line);
 
+void parsePipe(char *line);
+
 #endif
 

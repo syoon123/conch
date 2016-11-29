@@ -5,6 +5,7 @@
 #include <errno.h>
 
 #include "shell.h"
+#include "parse.h"
 
 int main() {
   chdir(getenv("HOME"));

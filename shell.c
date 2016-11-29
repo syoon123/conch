@@ -6,10 +6,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <ctype.h>
+
 #include "parse.h"
 #include "shell.h"
-
-char * lastCmd;
 
 /*******************************************************
 CHECKRP: Checks input string from terminal for redirects
@@ -41,7 +40,6 @@ void checkRP(char *line){
   else {
     execute(line);
   }
-  lastCmd = line;
 }
 
 /*******************************************************

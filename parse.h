@@ -9,6 +9,6 @@ char * trimSpace(char *str);
 
 void parse(char *line);
 
-void parsePipe(char *line);
+
 
 #endif
