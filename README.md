@@ -5,6 +5,7 @@ by Sarah Yoon and Winston Venderbush
 * Forks and executes commands
 * Parses multiple commands on one line
 * Redirects using >, <, >>, 2>, &>, and |
+* Supports blank cd and cd ~ support for home directory
 
 ### Attempted:
 * IDK
