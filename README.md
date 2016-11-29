@@ -40,14 +40,6 @@ PARSE: Handles parsing multiple commands and passes
 Takes as input: input string
 Returns: none
 *******************************************************/
-
-/*******************************************************
-PARSEPIPE: Splits the input on "|" and performes proper
-            redirection, passing commands to individual
-            forked processes for execution
-Takes as input: input string
-Returns: none
-*******************************************************/
 ```
 * shell.c - Handles the forking/executing of commands, redirection
 ```no-highlight
@@ -95,6 +87,14 @@ Returns: none
 AMPREDIR: Splits the input on "&>" and performes 
             the proper redirection before passing the
             command for execution
+Takes as input: input string
+Returns: none
+*******************************************************/
+
+/*******************************************************
+PARSEPIPE: Splits the input on "|" and performes proper
+            redirection, passing commands to individual
+            forked processes for execution
 Takes as input: input string
 Returns: none
 *******************************************************/
