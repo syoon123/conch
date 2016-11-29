@@ -9,7 +9,7 @@
 
 int main() {
   chdir(getenv("HOME"));
-  //system("clear");
+  system("clear");
   printf("Welcome to SeaShell!\n");
   printf("---------------------------\n\n");
   char * history;
