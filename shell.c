@@ -184,12 +184,13 @@ int execute(char *line){
     if (args[1] == NULL){
       chdir(getenv("HOME"));
     }
+    if ( !(strcmp(args[1], "~")) ) {
+      chdir(getenv("HOME"));
+    }
     else {
-      if (chdir(args[1]) == 0){
-        printf("Changing directory...\n");
-      }
-      else
+      if (!(chdir(args[1]) == 0)){
         printf("Failed to change directory!\n");
+      }
     }
     free(args);
     free(cmds);
