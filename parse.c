@@ -15,11 +15,19 @@ Takes as input: none
 Returns: none
 *******************************************************/
 
-void prompt() {
-  char cwd[256];
+char * prompt() {
+  char cwd[1000];
   getcwd(cwd, sizeof(cwd));
-  printf("%s", cwd);
-  printf("$ ");
+  int i = 0;
+  while(cwd[i] != '\0')
+  {
+    i++;
+
+  }
+  cwd[i] = '$';
+  cwd[i+1] = ' '; 
+  cwd[i+2] = '\0';
+  return cwd;
 }
 
 /*******************************************************
@@ -82,6 +90,7 @@ void parse(char *line){
   else {
     checkRP(line2);
   }
+  free(line2);
 }
 
 /*******************************************************
@@ -117,4 +126,5 @@ void parsePipe(char *line){
     execute(line);
     dup2(f2, STDIN_FILENO);
   }
+  //free(line2);
 }

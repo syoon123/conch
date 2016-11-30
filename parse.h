@@ -1,7 +1,7 @@
 #ifndef PARSE
 #define PARSE
 
-void prompt();
+char * prompt();
 
 char ** split( char *line, char *delimiter );
 

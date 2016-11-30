@@ -1,7 +1,7 @@
 GCC = gcc -g
 
 all: shell.o main.o parse.o
-	$(GCC) main.o shell.o parse.o -o prog
+	$(GCC) main.o shell.o parse.o -o prog -lreadline
 
 main.o: main.c shell.c parse.c
 	$(GCC) -c main.c
