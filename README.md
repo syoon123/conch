@@ -17,6 +17,7 @@ by Sarah Yoon and Winston Venderbush
 
 ### Bugs:
 * ~~On first starting the shell, if the user types a command and then deletes it using backspace, the user is able to delete the prompt as well~~
+* Opening files with spaces in it is impossible (currently splits on space)
 * CTRL + D throws a segmentation fault rather than cleanly exiting the shell process
 
 ### Files & Function Headers:
