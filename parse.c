@@ -10,9 +10,9 @@
 #include "shell.h"
 
 /*******************************************************
-PROMPT: prints current dir and delimiter 
+PROMPT: returns current dir and delimiter for prompt
 Takes as input: none
-Returns: none
+Returns: char array containing the prompt and delimiter
 *******************************************************/
 
 char * prompt() {
