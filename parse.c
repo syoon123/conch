@@ -24,6 +24,11 @@ char * prompt() {
   cwd[i] = '$';
   cwd[i+1] = ' '; 
   cwd[i+2] = '\0';
+  char *pcwd = &cwd[0];
+  pcwd = strrchr(pcwd, '/'); //single file path
+  pcwd = pcwd + 1;
+  // char *color = "\e[1;34m Test";
+  // char *final = strcat(color, pcwd);
   return cwd;
 }
 
