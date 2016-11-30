@@ -182,7 +182,7 @@ int execute(char *line){
 
   if ( !(strcmp(args[0], "cd" )) ) {
     if (args[1] == NULL){
-      chdir(getenv("HOME"));
+      args[1] = "~";
     }
     if ( !(strcmp(args[1], "~")) ) {
       chdir(getenv("HOME"));

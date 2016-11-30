@@ -13,7 +13,7 @@ int main() {
   chdir(getenv("HOME"));
   system("clear");
   printf("Welcome to SeaShell!\n");
-  printf("---------------------------\n\n");
+  printf("--------------------\n\n");
   printf("%s", prompt());
   char *line;
   while ((line = readline(prompt())) != NULL) {
