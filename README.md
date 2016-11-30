@@ -6,12 +6,13 @@ by Sarah Yoon and Winston Venderbush
 * Parses multiple commands on one line
 * Redirects using >, <, >>, 2>, &>, and |
 * Supports blank cd and cd ~ support for home directory
+* Support for tab auto-completion, history navigation with vertical arrow keys, text navigation with horizontal arrow keys (via GNU readline) 
 
 ### Attempted:
 * IDK
 
 ### Bugs:
-* IDK
+* On first starting the shell, if the user types a command and then deletes it using backspace, the user is able to delete the prompt as well.
 
 ### Files & Function Headers:
 * parse.c - Handles all line parsing functions
