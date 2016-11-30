@@ -18,9 +18,9 @@ by Sarah Yoon and Winston Venderbush
 * parse.c - Handles all line parsing functions
 ```no-highlight
 /*******************************************************
-PROMPT: prints current dir and delimiter 
+PROMPT: returns current dir and delimiter for prompt
 Takes as input: none
-Returns: none
+Returns: char array containing the prompt and delimiter
 *******************************************************/
 
 /*******************************************************
