@@ -12,7 +12,8 @@ by Sarah Yoon and Winston Venderbush
 
 ### Attempted:
 * Color support (for prompt) in shell (?)
-* Beautifying prompt (ie. show only current base directory, not entire path from root), etc.
+* ~~Beautifying prompt (ie. show only current base directory, not entire path from root), etc.~~
+* User settings (multiple short/long multiple prompt modes, multiple prompt colors, etc.)
 
 ### Bugs:
 * ~~On first starting the shell, if the user types a command and then deletes it using backspace, the user is able to delete the prompt as well~~
