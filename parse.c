@@ -16,14 +16,11 @@ Returns: char array containing the prompt and delimiter
 *******************************************************/
 
 char * prompt() {
-  char cwd[1000];
+  static char cwd[1000];
   getcwd(cwd, sizeof(cwd));
   int i = 0;
   while(cwd[i] != '\0')
-  {
     i++;
-
-  }
   cwd[i] = '$';
   cwd[i+1] = ' '; 
   cwd[i+2] = '\0';
