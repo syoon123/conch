@@ -1,6 +1,8 @@
 # SeaShell
 by Sarah Yoon and Winston Venderbush
 
+##NOTE: This project requires GNU Readline to run properly!
+
 ### Features:
 * Forks and executes commands
 * Parses multiple commands on one line
