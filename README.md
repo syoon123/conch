@@ -2,6 +2,7 @@
 by Sarah Yoon and Winston Venderbush
 
 ####NOTE: This project requires GNU Readline to run properly!
+If the shell does not run correctly straight out of the box, try installing GNU Readline...
 #####To install GNU Readline easily, run:
 ```no-highlight
 $ brew install readline
