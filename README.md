@@ -42,8 +42,8 @@ Returns: array of pointers to strings
 *******************************************************/
 
 /*******************************************************
-TRIMSPACE: removes extra white space from inside and 
-            around a given string
+TRIMSPACE: removes extra white space from around a given 
+           string
 Takes as input: input string
 Returns: "trimmed" output string
 *******************************************************/
