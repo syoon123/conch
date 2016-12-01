@@ -24,7 +24,7 @@ $ brew install readline
 
 ### Bugs:
 * Opening files with spaces in their names is currently impossible (because of splitting on space)
-* CTRL + D throws a segmentation fault rather than cleanly exiting the shell process
+* ~~CTRL + D throws a segmentation fault rather than cleanly exiting the shell process~~
 
 ### Files & Function Headers:
 * parse.c - Handles all line parsing functions
