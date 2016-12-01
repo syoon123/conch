@@ -171,7 +171,11 @@ int execute(char *line){
 
   cmds = split(line, ";");
   int i;
+  char *sptest;
   for (i=0; cmds[i] != NULL; i++) {
+    sptest = strchr(cmds[i], ' ');
+    sptest = sptest - 1;
+    
     args = split(cmds[i], " ");
   }
 

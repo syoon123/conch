@@ -12,8 +12,10 @@
 int main() {
   chdir(getenv("HOME"));
   system("clear");
-  printf("Welcome to SeaShell!\n");
-  printf("--------------------\n\n");
+  printf("Conch v1.0\n");
+  printf("By Winston Venderbush and Sarah Yoon\n\n");
+  printf("Welcome to SeaShell\n");
+  printf("-------------------\n\n");
   char *line;
   while ((line = readline(prompt())) != NULL) {
     if (line[0]!=0){
@@ -21,7 +23,6 @@ int main() {
       parse(line);
     }
   }
-  *strchr(line, '\n') = 0;
   free(line);
   return 0;
 }
