@@ -23,6 +23,7 @@ int main() {
       parse(line);
     }
   }
+  printf("\n");
   free(line);
   return 0;
 }
