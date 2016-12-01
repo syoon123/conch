@@ -1,4 +1,4 @@
-# SeaShell
+# SeaShell (Conch v1.0)
 by Sarah Yoon and Winston Venderbush
 
 ####NOTE: This project requires GNU Readline to run properly!
