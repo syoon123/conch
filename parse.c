@@ -24,9 +24,9 @@ char * prompt() {
   cwd[i] = '$';
   cwd[i+1] = ' '; 
   cwd[i+2] = '\0';
-  char *pcwd = &cwd[0];
-  pcwd = strrchr(pcwd, '/'); //single file path
-  pcwd = pcwd + 1;
+  // char *pcwd = &cwd[0];
+  // pcwd = strrchr(pcwd, '/'); //single file path, decided not to include
+  // pcwd = pcwd + 1;
   return cwd;
 }
 
