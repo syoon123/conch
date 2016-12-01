@@ -11,13 +11,14 @@ by Sarah Yoon and Winston Venderbush
 * Support for tab auto-completion, history navigation with vertical arrow keys, text navigation with horizontal arrow keys (via GNU readline) 
 
 ### Attempted:
-* Color support (for prompt) in shell (?)
-* ~~Beautifying prompt (ie. show only current base directory, not entire path from root), etc.~~
+* ~~Beautifying prompt (ie. show only current base directory, not entire path from root), etc.~~ (possible functionality included, but we decided we didn't like the way it looked as much!)
 * User settings (multiple short/long multiple prompt modes, multiple prompt colors, etc.)
+* Color support (for prompt) in shell
+* Handling spaces/quotes in filenames
+
 
 ### Bugs:
-* ~~On first starting the shell, if the user types a command and then deletes it using backspace, the user is able to delete the prompt as well~~
-* Opening files with spaces in it is impossible (currently splits on space)
+* Opening files with spaces in their names is currently impossible (because of splitting on space)
 * CTRL + D throws a segmentation fault rather than cleanly exiting the shell process
 
 ### Files & Function Headers:
