@@ -2,6 +2,10 @@
 by Sarah Yoon and Winston Venderbush
 
 ####NOTE: This project requires GNU Readline to run properly!
+#####To install GNU Readline easily, run:
+```no-highlight
+$ brew install readline
+```
 
 ### Features:
 * Forks and executes commands
