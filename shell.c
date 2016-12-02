@@ -191,7 +191,6 @@ void parsePipe(char *line){
     execute(line);
     dup2(f2, STDIN_FILENO);
   }
-  free(line2);
 }
 
 /*******************************************************
