@@ -93,38 +93,4 @@ void parse(char *line){
   free(line2);
 }
 
-/*******************************************************
-PARSEPIPE: Splits the input on "|" and performes proper
-            redirection, passing commands to individual
-            forked processes for execution
-Takes as input: input string
-Returns: none
-*******************************************************/
 
-void parsePipe(char *line){ 
-  char *line2 = (char *)malloc(256);
-  line2 = strsep(&line, "|");
-  line2 = trimSpace(line2); 
-  line = trimSpace(line);
-  int fs[2];
-  pipe(fs);
-  int f1 = dup(STDOUT_FILENO);
-  int f2 = dup(STDIN_FILENO);
-  int stat;
-  int pid = fork();
-  if (pid == 0){
-    close(fs[0]); 
-    dup2(fs[1], STDOUT_FILENO); 
-    close(fs[0]);
-    execute(line2);
-    exit(0);
-  }
-  else{
-    wait(&stat);
-    dup2(fs[0], STDIN_FILENO);
-    close(fs[1]);
-    execute(line);
-    dup2(f2, STDIN_FILENO);
-  }
-  //free(line2);
-}
