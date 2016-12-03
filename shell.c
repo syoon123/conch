@@ -61,7 +61,6 @@ void leftRedir(char *line){
   execute(line2);
   dup2(f2, STDIN_FILENO);
   close(f1);
-  free(line2);
 }
 
 /*******************************************************
@@ -83,7 +82,6 @@ void rightRedir(char *line){
   execute(line2); 
   dup2(f2, STDOUT_FILENO);
   close(f1);
-  free(line2);
 }
 
 /*******************************************************
@@ -106,7 +104,6 @@ void rightDoubleRedir(char *line){
   execute(line2); 
   dup2(f2, STDOUT_FILENO);
   close(f1);
-  free(line2);
 }
 
 /*******************************************************
@@ -129,7 +126,6 @@ void twoRedir(char *line){
   execute(line2); 
   dup2(f2, STDERR_FILENO);
   close(f1);
-  free(line2);
 }
 
 /*******************************************************
@@ -155,7 +151,6 @@ void ampRedir(char *line){
   dup2(ferr, STDERR_FILENO);
   dup2(fout, STDOUT_FILENO);
   close(f1);
-  free(line2);
 }
 
 /*******************************************************

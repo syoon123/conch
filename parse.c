@@ -59,6 +59,7 @@ Returns: "trimmed" output string
 
 char * trimSpace(char *str){
   char *end;
+  char *ret;
 
   while(isspace(*str)){
     str++;
